@@ -70,12 +70,11 @@ with inputform:
             price_abs_modeled_str = str(price_abs_modeled)
 
             st.header("Here's what we found")
-            df_col, map_df_col = st.columns(2)
 
             result_string='According to our model, your property should be worth around $' + price_abs_modeled_str
-            df_col.subheader(result_string)
+            st.subheader(result_string)
 
-            df_col.caption('This table shows you some details about other properties in your area. You can compare prices, living area etc.')
+            st.caption('This table shows you some details about other properties in your area. You can compare prices, living area etc.')
             filtered_columns = [ 'address.streetAddress','address.city', 'price', 'livingArea','yearBuilt', 'resoFacts.hasPrivatePool', 'resoFacts.garageSpaces', 'resoFacts.hasFireplace', 'resoFacts.hasSpa','resoFacts.lotSize']
 
             comparables_filter= (df_props['address.city']==address_city) & (df_props['livingArea']<(sqft*1.3)) & (df_props['livingArea']>(sqft*0.7))
@@ -83,4 +82,3 @@ with inputform:
             df_props[filtered_columns].loc[comparables_filter2]
 
             st.map(df_props.loc[comparables_filter2])
-            #df_props
