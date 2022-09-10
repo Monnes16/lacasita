@@ -21,7 +21,7 @@ years = list(range(1900,2023))
 years.reverse()
 
 
-with open('model_pickle', 'rb') as f:
+with open('model_pickle.pkl', 'rb') as f:
     model = pickle.load(f)
 
 with header:
