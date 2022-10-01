@@ -25,7 +25,7 @@ with open('model_pickle.pkl', 'rb') as f:
     model = pickle.load(f)
 
 with header:
-    st.title("La Casita: Property Analyzer")
+    st.title("La Casita: A Real Estate Price Estimator")
     st.markdown('Over the last couple of weeks we gathered some data and built a machine learning model to estimate real estate values. Feel free to give it a try!')
 
 with inputform:
